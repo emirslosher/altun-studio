@@ -27,7 +27,11 @@ Sesler, ACE-Step 1.5 yerel prototipinde üretilmiştir. LoRA örneği kısa tekn
 
 ## Yayın
 
-GitHub deposunu Vercel'e bağlayın, Next.js önayarını kullanın. Frontend için ortam değişkeni gerekmez. Ana dal üretim yayını, diğer dallar önizleme yayını için kullanılabilir.
+GitHub deposu Vercel'e bağlıdır; Next.js önayarını kullanır. Ana dal üretim yayını, diğer dallar önizleme yayını içindir.
+
+Supabase bağlantısı için `.env.example` dosyasını `.env.local` olarak kopyalayıp Project URL ve publishable key alanlarını doldurun. Vercel ortamlarına aynı iki değişken eklenmelidir. `GET /api/health/supabase` yalnızca API bağlantısını doğrular. Bu bağlantı, kullanıcı girişi veya canlı müzik üretimi özelliğini etkinleştirmez.
+
+Veritabanı kurulum adımları `supabase/SETUP.md` dosyasındadır. Migration henüz uygulanmamıştır; kullanıcıya özel erişim, kuyruk limitleri ve özel ses depolaması için başlangıç şeması içerir. Uygulama ve worker entegrasyonundan önce gerçek veritabanında erişim testleri yapılmalıdır.
 
 ## Sonraki aşama
 
