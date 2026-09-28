@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { GenerationPanel } from "../components/generation-panel";
 import {
   AudioLines,
   ArrowDownToLine,
@@ -277,7 +278,7 @@ export default function Studio() {
     setStyle(draft.style);
     setSelected(draft.instruments);
     setBpm(draft.bpm);
-    setDuration(draft.duration);
+    setDuration(["15", "30"].includes(draft.duration) ? draft.duration : "30");
     setView("studio");
   }
   const visibleTracks = tracks.filter(
@@ -359,7 +360,7 @@ export default function Studio() {
           <div className="profile">
             <span className="avatar">A</span>
             <div>
-              Misafir stüdyosu<small>Bu cihazda çalışıyorsun</small>
+              Altun Studio<small>Kişisel müzik stüdyon</small>
             </div>
             <span className="profile-dot" />
           </div>
@@ -529,7 +530,6 @@ export default function Studio() {
                         >
                           <option value="15">15 saniye</option>
                           <option value="30">30 saniye</option>
-                          <option value="60">60 saniye</option>
                         </select>
                         <ChevronDown size={14} />
                       </div>
@@ -545,9 +545,16 @@ export default function Studio() {
                     <ArrowRight size={18} />
                   </button>
                   <p className="demo-note">
-                    Önizlemede fikirlerini kaydedebilirsin. Canlı müzik üretimi
-                    henüz açık değil.
+                    Taslaklar bu tarayıcıda saklanır. Üretim için aşağıdan
+                    hesabına giriş yap.
                   </p>
+                  <GenerationPanel
+                    prompt={prompt}
+                    style={style}
+                    instruments={selected}
+                    bpm={bpm}
+                    duration={Number(duration)}
+                  />
                 </section>
 
                 <section
@@ -953,8 +960,7 @@ export default function Studio() {
         </span>
         <h2>İlk notaya hoş geldin.</h2>
         <p>
-          Altun Studio’nun bu sürümü, gelecekteki müzik üretim deneyiminin
-          etkileşimli önizlemesidir.
+          Fikrini taslak olarak sakla veya pilot hesabınla müzik üretimi iste.
         </p>
         <ol>
           <li>
@@ -971,8 +977,8 @@ export default function Studio() {
           </li>
         </ol>
         <div className="dialog-note">
-          Yeni müzik üretimi, hesap açma ve bulut eşitleme bu sürümde
-          bulunmuyor. Örnekler, seçtiğin ayarlardan bağımsız 10 saniyelik
+          Yeni müzik üretimi pilot erişimi ve bağlı bir üretim bilgisayarı
+          gerektirir. Hazır örnekler, seçtiğin ayarlardan bağımsız 10 saniyelik
           kayıtlardır.
         </div>
         <button

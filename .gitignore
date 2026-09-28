@@ -5,3 +5,5 @@ node_modules/
 !.env.example
 *.tsbuildinfo
 work/
+__pycache__/
+*.pyc

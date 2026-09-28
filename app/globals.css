@@ -1952,3 +1952,85 @@ main {
     scroll-behavior: auto !important;
   }
 }
+.generation-panel {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #ffffff18;
+  min-width: 0;
+}
+.generation-panel h3 {
+  font-size: 18px;
+  margin: 0 0 12px;
+}
+.generation-panel p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #b8b8a9;
+  overflow-wrap: anywhere;
+}
+.generation-panel form {
+  display: grid;
+  gap: 12px;
+}
+.generation-panel label {
+  display: grid;
+  gap: 7px;
+  font-size: 12px;
+  color: #c6c5b8;
+}
+.generation-panel input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid #ffffff26;
+  background: #171a16;
+  color: #f6f4e9;
+  border-radius: 10px;
+  padding: 12px;
+  font: inherit;
+}
+.generation-panel input:focus-visible {
+  outline: 2px solid #d6b475;
+  outline-offset: 2px;
+}
+.generation-panel button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.account-link,
+.account-row button,
+.generation-history button {
+  color: #d6b475;
+  background: transparent;
+  border: 1px solid #ffffff26;
+  border-radius: 8px;
+  padding: 9px 12px;
+  cursor: pointer;
+}
+.account-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+}
+.account-row span {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.generation-history article {
+  border-top: 1px solid #ffffff18;
+  padding: 14px 0;
+}
+.generation-history strong {
+  font-size: 12px;
+  color: #d6b475;
+}
+.generation-history audio {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+}
+.generation-panel .account-message {
+  color: #e2c488;
+}
